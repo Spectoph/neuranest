@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="/tesla logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuraNest</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+  <style>
+    body { background-color: #f7f7f7; }
+  </style>
+</head>
+<body className="text-gray-800">
+  <div id="root"></div>
+  <script type="text/babel">
+    function Header() {
+      return (
+        <header className="bg-gray-800 text-white py-6 fixed w-full z-10">
+          <div className="container mx-auto flex justify-between items-center px-4">
+            <h1 className="text-3xl font-bold">NeuraNest AI</h1>
+            <nav>
+              <a href="#home" className="mx-4 text-lg hover:text-gray-300">Home</a>
+              <a href="#benefits" className="mx-4 text-lg hover:text-gray-300">Benefits</a>
+              <a href="#products" className="mx-4 text-lg hover:text-gray-300">Products</a>
+              <a href="#case-studies" className="mx-4 text-lg hover:text-gray-300">Case Studies</a>
+              <a href="#pricing" className="mx-4 text-lg hover:text-gray-300">Pricing</a>
+              <a href="#integrations" className="mx-4 text-lg hover:text-gray-300">Integrations</a>
+              <a href="#faq" className="mx-4 text-lg hover:text-gray-300">FAQ</a>
+              <a href="#contact" className="mx-4 text-lg hover:text-gray-300">Contact</a>
+            </nav>
+          </div>
+        </header>
+      );
+    }
+
+    function Hero() {
+      return (
+        <section id="home" className="pt-24 pb-20 px-4 bg-white">
+          <div className="container mx-auto text-center">
+            <h2 className="text-5xl font-bold mb-6">Transform Customer Support with NeuraNest AI</h2>
+            <p className="text-xl mb-8 max-w-3xl mx-auto">One-time setup fee starting at $10,000. Replace costly staff, deliver instant responses, and boost customer satisfaction with our AI chatbots.</p>
+            <a href="#contact" className="bg-gray-800 text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-700">Get Started</a>
+          </div>
+        </section>
+      );
+    }
+
+    function Benefits() {
+      const benefits = [
+        { title: "Cost Savings", desc: "Eliminate the need for large support teams, saving millions annually." },
+        { title: "24/7 Availability", desc: "Provide instant responses to customer inquiries, even on holidays." },
+        { title: "Customer Retention", desc: "Fast, accurate solutions increase satisfaction and reduce refunds." },
+        { title: "Scalability", desc: "Handle thousands of inquiries daily without additional costs." }
+      ];
+
+      return (
+        <section id="benefits" className="py-20 px-4 bg-gray-100">
+          <div className="container mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-10">Why Choose NeuraNest AI?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="bg-white p-6 rounded-md shadow-md">
+                  <h3 className="text-2xl font-semibold mb-4">{benefit.title}</h3>
+                  <p className="text-lg">{benefit.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Products() {
+      const products = [
+        { name: "QuantumTalk", price: "$10,000", features: ["24/7 Support", "Instant Responses", "Multi-Language"], desc: "Ideal for small businesses seeking efficient customer support." },
+        { name: "NebulaCore", price: "$15,000", features: ["Advanced Analytics", "Custom Integrations", "Voice Support"], desc: "Designed for growing enterprises with complex needs." },
+        { name: "StarMind", price: "$25,000", features: ["Predictive Responses", "Full Automation", "Global Scalability"], desc: "Premium solution for industry leaders." }
+      ];
+
+      return (
+        <section id="products" className="py-20 px-4 bg-white">
+          <div className="container mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-10">Our AI Solutions</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {products.map((product, index) => (
+                <div key={index} className="bg-gray-50 p-8 rounded-md shadow-md">
+                  <h3 className="text-2xl font-semibold mb-4">{product.name}</h3>
+                  <p className="text-lg mb-4">{product.desc}</p>
+                  <p className="text-xl font-bold mb-4">{product.price} One-Time</p>
+                  <ul className="mb-6">
+                    {product.features.map((feature, i) => (
+                      <li key={i} className="text-lg">• {feature}</li>
+                    ))}
+                  </ul>
+                  <a href="#contact" className="bg-gray-800 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-gray-700">Purchase</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function CaseStudies() {
+      const caseStudies = [
+        { company: "LunaCorp", result: "Reduced support costs by 80% and improved response time to under 2 seconds." },
+        { company: "StellarMart", result: "Handled 10,000 daily inquiries, cutting refund rates by 60%." },
+        { company: "GalacticGoods", result: "Increased customer retention by 45% with predictive AI responses." }
+      ];
+
+      return (
+        <section id="case-studies" className="py-20 px-4 bg-gray-100">
+          <div className="container mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-10">Case Studies</h2>
+            <div className="max-w-4xl mx-auto">
+              {caseStudies.map((study, index) => (
+                <div key={index} className="bg-white p-6 rounded-md shadow-md mb-6">
+                  <h3 className="text-2xl font-semibold mb-4">{study.company}</h3>
+                  <p className="text-lg">{study.result}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Pricing() {
+      return (
+        <section id="pricing" className="py-20 px-4 bg-white">
+          <div className="container mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-10">Pricing Plans</h2>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-lg mb-6">Our AI chatbots require a one-time setup fee with no recurring costs:</p>
+              <ul className="text-lg">
+                <li className="mb-4">• <strong>QuantumTalk:</strong> $10,000 – Basic AI for small businesses.</li>
+                <li className="mb-4">• <strong>NebulaCore:</strong> $15,000 – Advanced features for growing enterprises.</li>
+                <li className="mb-4">• <strong>StarMind:</strong> $25,000 – Premium AI for large-scale operations.</li>
+              </ul>
+              <p className="text-lg mt-6">Contact us to discuss your specific needs and get started.</p>
+              <a href="#contact" className="mt-6 inline-block bg-gray-800 text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-700">Contact Sales</a>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Integrations() {
+      const integrations = [
+        { name: "CRM Systems", desc: "Seamlessly integrate with Salesforce, HubSpot, and more." },
+        { name: "E-Commerce Platforms", desc: "Compatible with Shopify, WooCommerce, and Magento." },
+        { name: "Communication Tools", desc: "Works with Slack, Microsoft Teams, and email systems." }
+      ];
+
+      return (
+        <section id="integrations" className="py-20 px-4 bg-gray-100">
+          <div className="container mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-10">Integrations</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {integrations.map((integration, index) => (
+                <div key={index} className="bg-white p-6 rounded-md shadow-md">
+                  <h3 className="text-2xl font-semibold mb-4">{integration.name}</h3>
+                  <p className="text-lg">{integration.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function FAQ() {
+      const faqs = [
+        { q: "How quickly can the AI be deployed?", a: "Setup takes 1-2 weeks, depending on customization needs." },
+        { q: "Does the AI require maintenance?", a: "No, our AI is self-updating with no monthly fees." },
+        { q: "Can it handle multiple languages?", a: "Yes, our AI supports over 50 languages natively." },
+        { q: "What kind of support do you offer?", a: "We provide 24/7 technical support during and after setup." }
+      ];
+
+      return (
+        <section id="faq" className="py-20 px-4 bg-white">
+          <div className="container mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <div className="max-w-4xl mx-auto">
+              {faqs.map((faq, index) => (
+                <div key={index} className="mb-6">
+                  <h3 className="text-xl font-semibold">{faq.q}</h3>
+                  <p className="text-lg">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Contact() {
+      return (
+        <section id="contact" className="py-20 px-4 bg-gray-100">
+          <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-10">Contact Us</h2>
+            <p className="text-xl mb-8 max-w-3xl mx-auto">Ready to streamline your customer support? Contact our team to learn more.</p>
+            <a href="mailto:sales@neuranest.ai" className="bg-gray-800 text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-700">Email Us</a>
+            <p className="mt-6 text-lg">Or call: <span className="font-semibold">+1-800-NEURA-AI</span></p>
+          </div>
+        </section>
+      );
+    }
+
+    function Footer() {
+      return (
+        <footer className="bg-gray-800 text-white py-8">
+          <div className="container mx-auto text-center">
+            <p className="text-lg">© 2025 NeuraNest AI. All rights reserved.</p>
+            <p className="text-lg">Contact: <a href="mailto:support@neuranest.ai" className="underline hover:text-gray-300">support@neuranest.ai</a></p>
+          </div>
+        </footer>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <Header />
+          <Hero />
+          <Benefits />
+          <Products />
+          <CaseStudies />
+          <Pricing />
+          <Integrations />
+          <FAQ />
+          <Contact />
+          <Footer />
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+  <script type="text/javascript">
+    (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '6849d5dae7fd6ff81985103e' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+</body>
+</html>
